@@ -1,0 +1,11 @@
+﻿<Application x:Class="PriceCompareUi.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PriceCompareUi"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type local:ItemListViewModel}">
+            <local:ItemListView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>
