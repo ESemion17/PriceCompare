@@ -38,6 +38,13 @@ namespace PriceCompareUi
 
         private void AddToCart()
         {
+            float quantity;
+            if (!float.TryParse(Quantity, out quantity) || quantity <= 0)
+            {
+                var eW = new ErrorWindow();
+                eW.ShowDialog();
+                return;
+            }
             var itemToAdd = _data.First().Find(i => i.ItemName.Equals(Item));
             for (int index = 0; index < _data.Count; index++)
             {
@@ -46,16 +53,11 @@ namespace PriceCompareUi
                 if (indexOtAdd == -1)
                     indexOtAdd = items.Select(i => i.ItemId).ToList().IndexOf(itemToAdd.ItemId);
                 _itemListViewModels[index].ItemName.Add(items[indexOtAdd].ItemName);
-                _itemListViewModels[index].ItemQuantity.Add(float.Parse(Quantity));
+                _itemListViewModels[index].ItemQuantity.Add(quantity);
                 _itemListViewModels[index].ItemPrice.Add(items[indexOtAdd].ItemPrice);
-                _itemListViewModels[index].AddingDone(float.Parse(Quantity), items[indexOtAdd].ItemPrice);
+                _itemListViewModels[index].AddingDone(quantity, items[indexOtAdd].ItemPrice);
             }
             SelectedTab = _itemListViewModels.First(s => s.TotalPrice == (_itemListViewModels.Select(store=> store.TotalPrice).Min()));
-        }
-
-        private void ItemListOnItemOpened(ItemListViewModel contact)
-        {
-            TryOpenTab(contact);
         }
 
         private void TryOpenTab(object tab)

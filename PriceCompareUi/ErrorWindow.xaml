@@ -1,0 +1,18 @@
+﻿<Window x:Class="PriceCompareUi.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PriceCompareUi"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="ErrorWindow" Height="150" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Quantity shoul be numerical" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button Grid.Row="1" Width="70" Height="30" Content="OK" Click="ButtonBase_OnClick"  />
+    </Grid>
+</Window>
