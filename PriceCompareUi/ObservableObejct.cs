@@ -4,6 +4,7 @@ using PriceCompareUi.Annotations;
 
 namespace PriceCompareUi
 {
+    //Well done!
     public class ObservableObejct: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

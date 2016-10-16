@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace PriceCompareUi
 {
+    //Well done!
     public class DelegateCommand : ICommand
     {
         private readonly Action _execute;

@@ -9,8 +9,14 @@ namespace PriceCompareLogic
 {
     public class DbAccessor
     {
+        //Consider not using static classes or methods unless necessary
+        //Using a static class/method creates a tight coupling with it
+        //Since it can not be hidden by an interface
+        //It also hinders testability,
+        //Since classes consuming a static class or member are "stuck with it" and can not swap them with a dummy data provider
         public static void CreateOrUpdateAdmin(User user)
         {
+            
             using (var db = new PriceCompareContext())
             {
                 var query = from u in db.Users

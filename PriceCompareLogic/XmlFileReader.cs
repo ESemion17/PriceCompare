@@ -5,6 +5,12 @@ using System.Xml.Linq;
 
 namespace PriceCompareLogic
 {
+    /*As it name dictates, this class reads XML files
+     * However, it has state which is not implied by its name- the item dictionary
+     * Which has absolutely nothing to do with this class
+     * The same issue arises with the GetData method which does not return a value
+     * Don't you think a better approach would be to return the dictionary from the read method instead?
+     */
     public class XmlFileReader
     {
         private XElement _xmlFile;

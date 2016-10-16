@@ -17,8 +17,11 @@ namespace PriceCompareLogic
             }
         }
 
+        //Consider breaking long methods into smaller, "mission focused" methods
+        //This improves debugability, manageability, readability and scalability of methods
         private void LoadInitXmlFiles()
         {
+            //consider using parameters instead of hard coded values- this will make your design a lot more flexible.
             var file1Dict = (new XmlFileReader("..\\..\\..\\PriceCompareLogic\\InitXml\\PriceFull7290058140886-044-201609100010.xml")).Items;
             var name1 = "רמי לוי";
             DbAccessor.InsertStore(file1Dict.First().Value.ChainId,name1);

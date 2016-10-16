@@ -6,6 +6,7 @@ using System.Windows.Data;
 
 namespace PriceCompareUi
 {
+    //I am happy to see that you have applied your knowledge in WPF in your final project, well done!
     public class TabSizeConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter,

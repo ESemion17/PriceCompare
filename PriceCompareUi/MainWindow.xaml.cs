@@ -26,6 +26,9 @@ namespace PriceCompareUi
         public MainWindow()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("he-IL");
+            //This is ok for now, but do consider that a true MVVM application has no code behind in *.xaml.cs files
+            //This can be accomplished via an MVVM framework- there are several of those with different code flavors.
+            //One that is vastly used in CodeValue is Caliburn.Micro: http://caliburnmicro.com/
             DataContext = new MainViewModel();
             InitializeComponent();
         }

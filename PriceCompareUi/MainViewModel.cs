@@ -7,6 +7,7 @@ using PriceCompareLogic;
 
 namespace PriceCompareUi
 {
+    //Well done!
     public class MainViewModel: ObservableObejct
     {
         private string _searchText;
